@@ -1,0 +1,44 @@
+{
+  "tasks": [
+    {
+      "text": "Feuerwehr Merkblatt",
+      "day": "26.04.2022",
+      "info": "Merkblatt für Truppmann I fertig machen :)",
+      "reminder": false,
+      "finished": true,
+      "id": 5
+    },
+    {
+      "text": "Mathe Sachen",
+      "day": "02.05.2022",
+      "info": "Taschenrechner und Formelsammlung abgeben gehen",
+      "reminder": true,
+      "finished": true,
+      "id": 10
+    },
+    {
+      "text": "it is fucking working",
+      "day": "05.05.2022",
+      "info": "omygawd, es ist noch etwas von dem lambda, omega",
+      "reminder": false,
+      "finished": false,
+      "id": 19
+    },
+    {
+      "text": "Custom Placeholder >:(",
+      "day": "06.05.2022",
+      "info": "try to implement custom placeholder (pain)... help me",
+      "reminder": true,
+      "finished": false,
+      "id": 20
+    },
+    {
+      "text": "asdfg",
+      "day": "08.05.2022",
+      "info": "asg",
+      "reminder": false,
+      "finished": false,
+      "id": 21
+    }
+  ]
+}
