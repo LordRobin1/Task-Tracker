@@ -31,14 +31,6 @@
       "reminder": true,
       "finished": false,
       "id": 20
-    },
-    {
-      "text": "asdfg",
-      "day": "08.05.2022",
-      "info": "asg",
-      "reminder": false,
-      "finished": false,
-      "id": 21
     }
   ]
 }
