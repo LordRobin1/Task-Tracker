@@ -32,7 +32,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run server`
 
 Run this in a separate terminal. \
-Runs json-server locally on port 5000. The Host is the device's IP the server is running on, so it responds if you test the website on other devices. \ Look into package.json to configure the command.
+Runs json-server locally on port 5000. The Host is the device's IP the server is running on, so it responds if you test the website on other devices. \ 
+Look into package.json to configure the command.
 
 ### `npm run eject`
 
