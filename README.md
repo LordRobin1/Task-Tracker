@@ -1,6 +1,6 @@
 # Task Tracker
 
-Simple Task Tracker. Runs locally via json-server.\
+Simple Task Tracker. Runs locally via [json-server](https://www.npmjs.com/package/json-server).\
 I followed [this react-tutorial](https://www.youtube.com/watch?v=w7ejDZ8SWv8) by [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) and then started to implement my own ideas afterwards.
 
 ## Available Scripts
