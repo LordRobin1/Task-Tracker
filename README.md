@@ -1,6 +1,6 @@
 # Task Tracker
 
-Simple Task Tracker. Runs locally via json-server. \
+Simple Task Tracker. Runs locally via json-server.\
 I followed [this react-tutorial](https://www.youtube.com/watch?v=w7ejDZ8SWv8) by [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) and then started to implement my own ideas afterwards.
 
 ## Available Scripts
@@ -17,14 +17,14 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-No reason to use, there are no tests. \
+No reason to use, there are no tests.\
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder. \
-It correctly bundles React in production mode and optimizes the build for the best performance. \
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.\
 Install serve (npm i -g serve) and then run the app with `serve -s`.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
@@ -32,7 +32,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run server`
 
 Run this in a separate terminal. \
-Runs json-server locally on port 5000. The Host is the device's IP the server is running on, so it responds if you test the website on other devices. \ 
+Runs json-server locally on port 5000. The Host is the device's IP the server is running on, so it responds if you test the website on other devices.\
 Look into package.json to configure the command.
 
 ### `npm run eject`
@@ -47,7 +47,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Learn More
 
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) \
+[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)\
 [React documentation](https://reactjs.org/)
 
 ### Code Splitting
