@@ -25,7 +25,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Builds the app for production to the `build` folder. \
 It correctly bundles React in production mode and optimizes the build for the best performance. \
-Install serve (npm i -g serve) and then run the app with `serve -s`. \
+Install serve (npm i -g serve) and then run the app with `serve -s`.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
@@ -47,7 +47,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ## Learn More
 
 [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) \
-[React documentation](https://reactjs.org/).
+[React documentation](https://reactjs.org/)
 
 ### Code Splitting
 
