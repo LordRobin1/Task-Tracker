@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import Header from './components/Header'
 import Tasks from './components/Tasks'
-import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
 
@@ -129,15 +128,25 @@ function App() {
                 element={
                   <div className='content'>
                       <div className='taskListSpacer'>
+                      {/* is planned to include multiple tasklists 
+                          Tasklist will be separate component*/}
                           <div className="container">
-                            <Header onAdd={() => setShowAddTask(!showAddTask)}
-                            showAdd={showAddTask} />
-                            {showAddTask && <AddTask onAdd={addTask}/>}
+                            
+                            <Header/>
+
                             {tasks.length > 0 ? (
-                            <Tasks tasks={tasks} onDragEnd={saveDrag} onDelete={deleteTask} onToggle={toggleReminder} onFinish={finishTask}/>
-                            ) : (
+                              <Tasks  
+                                tasks={tasks} onDragEnd={saveDrag} onDelete={deleteTask} 
+                                onToggle={toggleReminder} onFinish={finishTask}
+                                onAdd={() => setShowAddTask(!showAddTask)}
+                                showAdd={showAddTask}
+                                onAddTask={addTask}
+                                >                                
+                              </Tasks>
+                              ) : (
                             "\nNo Tasks :D"
                             )}
+
                           </div>
                       </div>
                   </div>

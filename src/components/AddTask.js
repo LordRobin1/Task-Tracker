@@ -3,7 +3,7 @@ import { FaCalendarDay } from 'react-icons/fa'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
-const AddTask = ({ onAdd }) => {
+const AddTask = ({ onAddTask }) => {
   const [text, setText] = useState('')
   const [date, setDate] = useState(new Date())
   const [info, setInfo] = useState('')
@@ -25,7 +25,7 @@ const AddTask = ({ onAdd }) => {
     const tempYear = `${date.getFullYear()}`
 
     const day = `${tempDay}.${tempMonth}.${tempYear}`
-    onAdd({ text, day, info, reminder, finished })
+    onAddTask({ text, day, info, reminder, finished })
     setText('')
     setDate(new Date())
     setInfo('')

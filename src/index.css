@@ -61,7 +61,7 @@ body {
   overflow: auto;
 }
 .task:hover {
-  box-shadow: 1px 1px 5px 1px rgba(163, 175, 189, 0.699);
+  box-shadow: 1px 1px 5px 1px #a3afbdb2;
 }
 
 .task.reminder {
@@ -133,12 +133,11 @@ justify-content: space-between;
   transition: box-shadow 0.2s ease 0s;
 }
 .footer a:hover {
-    box-shadow: 1px 1px 5px 1px rgba(163, 175, 189, 0.699);
+    box-shadow: 1px 1px 5px 1px #a3afbdb2;
 }
 
 .about {
   display: flex;
-  /* width: 50%; */
   margin: auto;
   justify-content: center;
   text-align: center;
@@ -146,12 +145,12 @@ justify-content: space-between;
 }
 
 .btn {
-  display: inline-block;
+  width: 98%;
   background: linear-gradient(90deg, #fd5c96, #bb43a7);
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  margin: 5px;
+  padding: 12px 0;
+  margin: 0 5px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 15px;
@@ -165,15 +164,29 @@ justify-content: space-between;
 .btn:hover {
   box-shadow: 1px 1px 5px 1px #a3afbdb2;
 }
+.btn-add {
+  display: block;
+  /* border: dashed 2.5px #cccccc; */
+  padding: 30px 0;
+  background: #00000000;
+  background-color:white;
+  color: #999999;
+}
+.btn-add:hover {
+  box-shadow: none;
+  background-color: #f4f4f4;
+  /* border-color: #a0a0a0; */
+}
 .btn-block {
   display: block;
-  width: 100%;
+  width: 98%;
   background: linear-gradient(90deg, #fd5c96, #bb43a7);
 }
+
 .icon {
-  color: gray;
+  color: grey;
   cursor: pointer;
-  transition: all .2s ease 0s;
+  transition: all .1s ease 0s;
 }
 .icon:hover {
   color: #ef579a;

@@ -1,20 +1,26 @@
-import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import { useLocation } from 'react-router-dom'
 import Task from './Task'
 import FinishedTask from './FinishedTask'
+import AddTask from './AddTask'
+import Button from './Button'
 
 
-const Tasks = ({ tasks, onDelete, onToggle, onFinish, onDragEnd }) => {
+const Tasks = ({ tasks, onDelete, onToggle, onFinish, onDragEnd, showAdd, onAdd, onAddTask }) => {
     
+    const location = useLocation()
+
     const DragEnd = (result) => {
         const items = Array.from(tasks);
         const [reorderdItem] = items.splice(result.source.index, 1);
-        items.splice(result.destination.index, 0, reorderdItem)
+        items.splice(result.destination.index, 0, reorderdItem);
         
         if (result.destination == null) {
             return;
         }
         onDragEnd(items)
     }
+
     return (
            
         <div className='tasks'>
@@ -62,6 +68,16 @@ const Tasks = ({ tasks, onDelete, onToggle, onFinish, onDragEnd }) => {
                 </Droppable>
             </DragDropContext>
             
+            {location.pathname === '/' && (
+                <Button 
+                    classname={"btn btn-add"}
+                    text={showAdd ? 'Cancel' : 'Add Task'}
+                    onClick={onAdd}
+                    showAdd={showAdd}
+                />
+            )}
+            {showAdd && <AddTask onAddTask={onAddTask}/>}
+
             {/* finished Tasks */}
             <div className='finishedTasks'>
                 <p><b>Finished Tasks</b></p>
