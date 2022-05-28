@@ -10,8 +10,6 @@ const AddTask = ({ onAddTask }) => {
   const [reminder, setReminder] = useState(false)
   const [finished, setFinished] = useState(false)
   
-  //const [showCalendar, setShowCalendar] = useState(false)
-  
   const onSubmit = (e) => {
     e.preventDefault()
 
@@ -20,11 +18,16 @@ const AddTask = ({ onAddTask }) => {
       return
     }
     
-    const tempDay = `${date.getDate() < 10 ? '0' : ''}${date.getDate()}`
-    const tempMonth = `${date.getMonth() < 9 ? '0' : ''}${date.getMonth() + 1}`
-    const tempYear = `${date.getFullYear()}`
+    let day = ''
+    try {
+      const tempDay = `${date.getDate() < 10 ? '0' : ''}${date.getDate()}`
+      const tempMonth = `${date.getMonth() < 9 ? '0' : ''}${date.getMonth() + 1}`
+      const tempYear = `${date.getFullYear()}`
+      day = `${tempDay}.${tempMonth}.${tempYear}`}
+    catch (TypeError) {
+      day = ''
+    }
 
-    const day = `${tempDay}.${tempMonth}.${tempYear}`
     onAddTask({ text, day, info, reminder, finished })
     setText('')
     setDate(new Date())
@@ -47,16 +50,15 @@ const AddTask = ({ onAddTask }) => {
             <label> Day & Time
               <FaCalendarDay 
                 style={{color: 'gray', paddingLeft: '5px', cursor: 'pointer'}}
-                // onClick={() => setShowCalendar(!showCalendar)}
               />                
             </label>            
             <DatePicker 
-              placeholderText='Add Day & Time'
-              selected={date}
-              onChange={date => { setDate(date) }}
-              shouldCloseOnSelect={false}
-              closeOnScroll={true}
-              dateFormat='dd.MM.yyyy'
+                placeholderText='Add Day & Time'
+                selected={date}
+                onChange={ date => setDate(date) }
+                shouldCloseOnSelect={true}
+                closeOnScroll={true}
+                dateFormat='dd.MM.yyyy'
             />
             <label style={{marginTop: '10px'}} > Description / Info
               <input type='text' placeholder='Description/Info' style={{marginTop: '10px'}}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 * {
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'IBM Plex Sans', 'Poppins', sans-serif;  
+  font-family: 'IBM Plex Sans', 'Poppins', sans-serif;
 }
 .content {
   min-height: 100vh;
@@ -24,12 +24,11 @@ body {
 
 .container {
   background: white;
-  max-width: 500px;
+  max-width: 550px;
   margin: 30px auto;
   padding: 30px;
   overflow: auto;
   min-height: 200px;
-  /* border: 2px solid steelblue; */
   border-radius: 5px;
 }
 
@@ -43,6 +42,7 @@ body {
 .tasks {
   padding-top: 15px;
   border-top: 2px solid #baba;
+  font-size: 150%;
 }
 
 .finishedTasks {
@@ -52,6 +52,7 @@ body {
 }
 
 .task {
+  font-size: .8em;
   background:#f4f4f4;
   margin: 10px 5px;
   padding: 10px 20px;
@@ -63,19 +64,17 @@ body {
 .task:hover {
   box-shadow: 1px 1px 5px 1px #a3afbdb2;
 }
-
 .task.reminder {
   border-left: 5px solid green;
 }
 .task.finished {
   background: #4DD8F8;
-  /* background: #deffdb; */
   border-left: none;
 }
 .task h3 {
-display: flex;
-align-items: center;
-justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }/*
 .task p {
   align-items: center;
@@ -90,6 +89,7 @@ justify-content: space-between;
 .form-control {
   margin: 10px 0;
   font-weight: bold;
+  font-size: .9em;
 }
 .form-control label {
   display: block;
@@ -99,7 +99,7 @@ justify-content: space-between;
   width: 100%;
   height: 40px;
   padding: 0 5px;
-  font-size: 17px;
+  font-size: .9em;
 }
 .form-control-check {
   display: flex;
@@ -124,13 +124,14 @@ justify-content: space-between;
   margin-bottom: 5px;
 }
 .footer a {
-  padding: 3px;
+  padding: 4px;
   text-decoration: none;
   color: black;
   border-radius: 2px;
   background: linear-gradient(90deg, #fd5c96, #bb43a7);
   box-shadow: none;  
   transition: box-shadow 0.2s ease 0s;
+  font-size: 2vh;
 }
 .footer a:hover {
     box-shadow: 1px 1px 5px 1px #a3afbdb2;
@@ -142,6 +143,7 @@ justify-content: space-between;
   justify-content: center;
   text-align: center;
   margin-top: 10px;
+  font-size: 2.5vh;
 }
 
 .btn {
@@ -166,11 +168,12 @@ justify-content: space-between;
 }
 .btn-add {
   display: block;
-  /* border: dashed 2.5px #cccccc; */
   padding: 30px 0;
   background: #00000000;
   background-color:white;
   color: #999999;
+  font-size: .8em;
+  /* border: dashed 2.5px #cccccc; */
 }
 .btn-add:hover {
   box-shadow: none;

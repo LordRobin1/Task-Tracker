@@ -7,13 +7,13 @@ const FinishedTask = ({ task, onDelete }) => {
   
   return (
     <div className="task finished">
-        <h3>{task.text}
+        <h3 style={{fontWeight: 'bold'}}>{task.text}
             <div onMouseEnter={() => (setIsHover(true))}
                  onMouseLeave={() => (setIsHover(false))}
             > 
                 {ishover 
                   ? 
-                  <FaTrashAlt style={{color: 'gray'}} onClick={() => onDelete(task.id)}/>
+                  <FaTrashAlt style={{color: 'gray'}} onClick={() => onDelete(task)}/>
                   :   
                   <FaCheckCircle style={{color: '#ef579a'}} />
                 }

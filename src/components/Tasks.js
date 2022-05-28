@@ -6,19 +6,25 @@ import AddTask from './AddTask'
 import Button from './Button'
 
 
-const Tasks = ({ tasks, onDelete, onToggle, onFinish, onDragEnd, showAdd, onAdd, onAddTask }) => {
+const Tasks = ({ tasks, finishedTasks, onDelete, onToggle, onFinish, onDragEnd, showAdd, onAdd, onAddTask }) => {
     
-    const location = useLocation()
+    const location = useLocation();
 
     const DragEnd = (result) => {
         const items = Array.from(tasks);
         const [reorderdItem] = items.splice(result.source.index, 1);
-        items.splice(result.destination.index, 0, reorderdItem);
         
-        if (result.destination == null) {
+        try {
+            items.splice(result.destination.index, 0, reorderdItem);
+        }
+        catch (TypeError) {
+            console.warn("TypeError: result.destination null \n\nMake sure to drag the taskelement into another list");
             return;
         }
-        onDragEnd(items)
+        // items.forEach(item => {
+        //     item.id = items.indexOf(item) + 1;
+        // });
+        onDragEnd(items);
     }
 
     return (
@@ -28,40 +34,40 @@ const Tasks = ({ tasks, onDelete, onToggle, onFinish, onDragEnd, showAdd, onAdd,
             <DragDropContext
                 onDragEnd={DragEnd}
             >    
-                <p><b>Tasks</b></p>                
-                <Droppable droppableId='droppable-1'>              
+                <p style={{fontStyle: 'italic'}}
+                >Tasks</p>
+                <Droppable droppableId='droppable-1'>
                     {(provided) => (
                         <ul
                             ref={provided.innerRef}
                             {...provided.droppableProps}
-                            style={{ listStyle: 'none'}}
+                            style={tasks.length > 0 ? { listStyle: 'none' } : { margin: '5px 0' }}
                         >
-                            {tasks.map((task, index) => {
-                            return (
-                                !task.finished &&
-                                <Draggable  draggableId={`${task.id}`}
-                                            key={task.id}
-                                            index={index}
-                                >
-                                    {(provided) => (
-                                        <li
-                                            ref={provided.innerRef}
-                                            {...provided.draggableProps}
-                                            {...provided.dragHandleProps}
-                                        >
-                                            <Task
+                            {tasks.length > 0 ? 
+                                (tasks.map((task, index) => {
+                                return (
+                                    <Draggable  draggableId={`${task.id}`}
                                                 key={task.id}
-                                                task={task}
-                                                tasks={tasks}
-                                                onDelete={onDelete}
-                                                onToggle={onToggle}
-                                                onFinish={onFinish}
-                                            />
-                                        </li>
-                                    )}                                
-                                </Draggable>
-                            );
-                            })}                            
+                                                index={index}
+                                    >
+                                        {(provided) => (
+                                            <li
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                            >
+                                                <Task
+                                                    key={task.id}
+                                                    task={task}
+                                                    onDelete={onDelete}
+                                                    onToggle={onToggle}
+                                                    onFinish={onFinish}
+                                                />
+                                            </li>
+                                        )}                                
+                                    </Draggable>
+                                );
+                                })) : ''}
                             {provided.placeholder}
                         </ul>
                     )}
@@ -76,14 +82,14 @@ const Tasks = ({ tasks, onDelete, onToggle, onFinish, onDragEnd, showAdd, onAdd,
                     showAdd={showAdd}
                 />
             )}
-            {showAdd && <AddTask onAddTask={onAddTask}/>}
+            {showAdd && <AddTask onAddTask={onAddTask} showAdd={showAdd}/>}
 
             {/* finished Tasks */}
             <div className='finishedTasks'>
-                <p><b>Finished Tasks</b></p>
+                <p style={{fontStyle: 'italic'}}
+                >Finished Tasks</p>
                 <> 
-                {tasks.map((task) => (
-                    task.finished && 
+                {finishedTasks.map((task) => (
                     <FinishedTask
                         key={task.id} 
                         task={task} 

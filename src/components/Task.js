@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { FaTrashAlt, FaCheck, FaCalendarDay, FaInfoCircle } from 'react-icons/fa'
 
-const Task = ({ tasks, task, onDelete, onToggle, onFinish }) => {
+const Task = ({task, onDelete, onToggle, onFinish }) => {
   const [scale1, setScale1] = useState('1.3')
   const [scale2, setScale2] = useState('1.3')
 
   return (
       <div
             className={`task ${task.reminder ? 'reminder' : ''}`} 
-            onDoubleClick={() => onToggle(task.id)}
+            onDoubleClick={() => onToggle(task)}
       >     
         <div style={{ display: 'flex', justifyContent: 'space-between'}}>
 
@@ -43,7 +43,7 @@ const Task = ({ tasks, task, onDelete, onToggle, onFinish }) => {
                   
                   style={{ scale: scale1, margin: '10px auto' }}
                   className='icon'
-                  onClick={() => onFinish(task.id)}
+                  onClick={() => onFinish(task)}
                 />
                 <FaTrashAlt
                   onMouseEnter={() => setScale2('1.4')}
@@ -51,7 +51,7 @@ const Task = ({ tasks, task, onDelete, onToggle, onFinish }) => {
 
                   style={{  scale: scale2, margin: '10px auto' }}
                   className='icon'
-                  onClick={() => onDelete(task.id)}
+                  onClick={() => onDelete(task)}
                 />
             </div>
         </div>

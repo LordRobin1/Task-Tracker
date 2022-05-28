@@ -1,36 +1,4 @@
 {
-  "tasks": [
-    {
-      "text": "it is fucking working",
-      "day": "05.05.2022",
-      "info": "omygawd, es ist noch etwas von dem lambda, omega",
-      "reminder": false,
-      "finished": true,
-      "id": 19
-    },
-    {
-      "text": "Custom Placeholder >:(",
-      "day": "06.05.2022",
-      "info": "try to implement custom placeholder (pain)... help me",
-      "reminder": true,
-      "finished": false,
-      "id": 20
-    },
-    {
-      "text": "Test",
-      "day": "13.05.2022",
-      "info": "This's a test",
-      "reminder": true,
-      "finished": false,
-      "id": 21
-    },
-    {
-      "text": "heelo",
-      "day": "15.05.2022",
-      "info": "teeestt",
-      "reminder": false,
-      "finished": false,
-      "id": 22
-    }
-  ]
+  "tasks": [],
+  "finishedTasks": []
 }
