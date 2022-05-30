@@ -14,7 +14,7 @@ const Task = ({task, onDelete, onToggle, onFinish }) => {
 
             {/* taskcontent */}
             <div>
-                <h3>{task.text}</h3>
+                <p>{task.text}</p>
 
                 <div style={{ display: 'flex', margin: '5px 0'}}>
                     <div>

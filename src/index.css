@@ -6,15 +6,22 @@
   margin: 0;
   padding: 0;
 }
-
+::selection {
+  color: white;
+  background-color: #fd5c96;
+}
 body {
   font-family: 'IBM Plex Sans', 'Poppins', sans-serif;
+  background-color: #0d1117;
+}
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .content {
-  min-height: 100vh;
-  padding: 50px 0;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #fd5c96, #bb43a7);
+  padding-bottom: 4vh;
+  font-size: 1rem;
 }
 
 .taskListSpacer {
@@ -37,12 +44,13 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1.69rem;
 }
 
 .tasks {
   padding-top: 15px;
   border-top: 2px solid #baba;
-  font-size: 150%;
 }
 
 .finishedTasks {
@@ -52,35 +60,48 @@ body {
 }
 
 .task {
-  font-size: .8em;
   background:#f4f4f4;
   margin: 10px 5px;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: box-shadow 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
   overflow: auto;
+  font-size: 1.1em;
 }
 .task:hover {
   box-shadow: 1px 1px 5px 1px #a3afbdb2;
 }
-.task.reminder {
-  border-left: 5px solid green;
-}
 .task.finished {
-  background: #4DD8F8;
+  background-color: #0d1117;
+  color: white;
   border-left: none;
+}
+.task.finished:hover {
+  /* box-shadow: 2px 2px 5px 2px #a3afbdb2; */
+  background-color: #424242;
+  box-shadow: none;
+}
+.task p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 7px;
 }
 .task h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}/*
-.task p {
-  align-items: center;
-  padding-right: 2px;
-  padding-top: 5px;
-} */
+  font-size: 1.1em;
+}
+.task h3 div {
+  color: #fd5c96;
+}
+.task.reminder {
+  border-left: 5px solid green;
+}
 
 .add-form {
   margin: 20px 30px;
@@ -89,7 +110,7 @@ body {
 .form-control {
   margin: 10px 0;
   font-weight: bold;
-  font-size: .9em;
+  font-size: 1.1em;
 }
 .form-control label {
   display: block;
@@ -99,7 +120,8 @@ body {
   width: 100%;
   height: 40px;
   padding: 0 5px;
-  font-size: .9em;
+  font-family: 'IBM Plex Sans';
+  font-size: 1em;
 }
 .form-control-check {
   display: flex;
@@ -114,36 +136,41 @@ body {
   height: 20px;
 }
 
-
 .footer {
-  margin: 30px auto;
+  margin: auto;
+  margin-bottom: 20px;
   text-align: center;
-  /* margin-top: 30px; */
+  font-size: 1.1rem;
 }
 .footer p {
-  margin-bottom: 5px;
+  color: white;
+  margin-bottom: 10px;
 }
 .footer a {
-  padding: 4px;
   text-decoration: none;
-  color: black;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #fd5c96, #bb43a7);
-  box-shadow: none;  
-  transition: box-shadow 0.2s ease 0s;
-  font-size: 2vh;
+  background-color: #0d1117;
+  transition: all 0.2s ease 0s;
+  border-radius: 5px;
+  padding: 4%;
 }
 .footer a:hover {
-    box-shadow: 1px 1px 5px 1px #a3afbdb2;
+  background-color: #424242;
+}
+.footer a span {
+  font-weight: bold;
+  color: transparent;
+  background-image: linear-gradient(90deg, #fd5c96, #bb43a7);
+  background-clip: text;
 }
 
 .about {
+  color: white;
   display: flex;
   margin: auto;
   justify-content: center;
   text-align: center;
   margin-top: 10px;
-  font-size: 2.5vh;
+  font-size: 1.1rem;
 }
 
 .btn {
@@ -155,7 +182,7 @@ body {
   margin: 0 5px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: bold;
   font-family: inherit;
   transition: all 0.1s ease-in-out 0s;
@@ -172,7 +199,7 @@ body {
   background: #00000000;
   background-color:white;
   color: #999999;
-  font-size: .8em;
+  font-size: 1.1rem;
   /* border: dashed 2.5px #cccccc; */
 }
 .btn-add:hover {
@@ -187,12 +214,12 @@ body {
 }
 
 .icon {
+  text-decoration: none;
   color: grey;
   cursor: pointer;
   transition: all .1s ease 0s;
 }
 .icon:hover {
-  color: #ef579a;
+  color: #fd5c96;
   scale: 1.1;
-  /* color: #4dd8f8; */
 }

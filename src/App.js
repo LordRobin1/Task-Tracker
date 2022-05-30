@@ -84,8 +84,9 @@ function App() {
   // Finish Task
   const finishTask = async (task) => {
     const taskToFinish = await fetchTask(task)
-    const finishedTask = { ...taskToFinish, finished: !taskToFinish.finished,
-                           id: finishedTasks.indexOf(finishedTasks.length - 1) + 1}
+    const finishedTask = { 
+      ...taskToFinish, finished: !taskToFinish.finished,
+      id: finishedTasks.indexOf(finishedTasks.length - 1) + 1}
 
     await fetch(`http://192.168.178.20:5000/finishedTasks`, {
       method: 'POST',
@@ -170,8 +171,8 @@ function App() {
   return (
     <>
       <div>
-          <p style={{ textAlign: 'center', fontSize:'20vh',
-                      fontWeight: 'bolder'}}
+          <p style={{ textAlign: 'center', fontSize:'6.9rem',
+                      fontWeight: 'bolder', color: 'white'}}
           >Hello.</p>
       </div>
       <Router>
@@ -198,8 +199,8 @@ function App() {
                               </Tasks>
                               ) : (
                               <>  
-                                <p style={{marginBottom: '5px'}}>No Tasks :p</p>
-                                <Button 
+                                <p style={{marginBottom: '5px'}}></p>
+                                <Button
                                   classname={"btn btn-add"}
                                   text={showAddTask ? 'Cancel' : 'Add Task'}
                                   onClick={() => setShowAddTask(!showAddTask)}

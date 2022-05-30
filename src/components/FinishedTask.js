@@ -13,9 +13,9 @@ const FinishedTask = ({ task, onDelete }) => {
             > 
                 {ishover 
                   ? 
-                  <FaTrashAlt style={{color: 'gray'}} onClick={() => onDelete(task)}/>
+                  <FaTrashAlt style={{color: 'silver'}} onClick={() => onDelete(task)}/>
                   :   
-                  <FaCheckCircle style={{color: '#ef579a'}} />
+                  <FaCheckCircle/>
                 }
             </div>
         </h3>

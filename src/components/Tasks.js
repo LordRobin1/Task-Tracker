@@ -34,7 +34,7 @@ const Tasks = ({ tasks, finishedTasks, onDelete, onToggle, onFinish, onDragEnd, 
             <DragDropContext
                 onDragEnd={DragEnd}
             >    
-                <p style={{fontStyle: 'italic'}}
+                <p style={{fontStyle: 'italic', fontSize: '1.3rem'}}
                 >Tasks</p>
                 <Droppable droppableId='droppable-1'>
                     {(provided) => (
@@ -86,7 +86,7 @@ const Tasks = ({ tasks, finishedTasks, onDelete, onToggle, onFinish, onDragEnd, 
 
             {/* finished Tasks */}
             <div className='finishedTasks'>
-                <p style={{fontStyle: 'italic'}}
+                <p style={{fontStyle: 'italic', fontSize: '1.3rem'}}
                 >Finished Tasks</p>
                 <> 
                 {finishedTasks.map((task) => (
